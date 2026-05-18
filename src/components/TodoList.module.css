@@ -1,0 +1,24 @@
+.list {
+  list-style: none;
+  padding: 8px 0;
+  min-height: 60px;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 52px 24px;
+  color: var(--color-text-muted);
+}
+
+.empty p {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.empty span {
+  font-size: 0.88rem;
+}

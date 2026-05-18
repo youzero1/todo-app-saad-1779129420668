@@ -1,0 +1,111 @@
+.form {
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inputRow {
+  display: flex;
+  gap: 10px;
+}
+
+.input {
+  flex: 1;
+  height: 46px;
+  padding: 0 16px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.97rem;
+  color: var(--color-text-primary);
+  background: var(--color-surface-alt);
+  outline: none;
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+
+.input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-light);
+  background: var(--color-surface);
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.addBtn {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-md);
+  background: var(--color-accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s, transform 0.1s;
+  flex-shrink: 0;
+}
+
+.addBtn:hover:not(:disabled) {
+  background: var(--color-accent-hover);
+  transform: scale(1.06);
+}
+
+.addBtn:disabled {
+  background: var(--color-border);
+  cursor: not-allowed;
+}
+
+.priorityRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.priorityLabel {
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  margin-right: 2px;
+}
+
+.priorityBtn {
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 2px solid transparent;
+  transition: all 0.15s;
+  opacity: 0.55;
+}
+
+.priorityBtn.low {
+  color: var(--color-priority-low);
+  border-color: var(--color-priority-low);
+}
+
+.priorityBtn.medium {
+  color: var(--color-priority-medium);
+  border-color: var(--color-priority-medium);
+}
+
+.priorityBtn.high {
+  color: var(--color-priority-high);
+  border-color: var(--color-priority-high);
+}
+
+.priorityBtn.low.selected {
+  background: var(--color-success-light);
+  opacity: 1;
+}
+
+.priorityBtn.medium.selected {
+  background: var(--color-warning-light);
+  opacity: 1;
+}
+
+.priorityBtn.high.selected {
+  background: var(--color-danger-light);
+  opacity: 1;
+}

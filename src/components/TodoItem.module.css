@@ -1,0 +1,122 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.15s;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.item:hover {
+  background: var(--color-surface-alt);
+}
+
+.item.completed .text {
+  text-decoration: line-through;
+  color: var(--color-text-muted);
+}
+
+.checkbox {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid var(--color-border);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  background: var(--color-surface);
+}
+
+.checkbox:hover {
+  border-color: var(--color-accent);
+}
+
+.checkbox.checked {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.priorityDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.priorityDot.low {
+  background: var(--color-priority-low);
+}
+
+.priorityDot.medium {
+  background: var(--color-priority-medium);
+}
+
+.priorityDot.high {
+  background: var(--color-priority-high);
+}
+
+.text {
+  flex: 1;
+  font-size: 0.96rem;
+  color: var(--color-text-primary);
+  word-break: break-word;
+}
+
+.editInput {
+  flex: 1;
+  padding: 4px 10px;
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  font-size: 0.96rem;
+  outline: none;
+  background: var(--color-accent-light);
+  color: var(--color-text-primary);
+}
+
+.actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.item:hover .actions {
+  opacity: 1;
+}
+
+.actionBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  color: var(--color-text-secondary);
+}
+
+.editBtn:hover {
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+.deleteBtn:hover {
+  background: var(--color-danger-light);
+  color: var(--color-danger);
+}
+
+.saveBtn:hover {
+  background: var(--color-success-light);
+  color: var(--color-success);
+}
+
+.cancelBtn:hover {
+  background: var(--color-danger-light);
+  color: var(--color-danger);
+}

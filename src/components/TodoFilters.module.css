@@ -1,0 +1,44 @@
+.filters {
+  display: flex;
+  gap: 4px;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface-alt);
+}
+
+.filterBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  transition: all 0.15s;
+}
+
+.filterBtn:hover {
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+.filterBtn.active {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.badge {
+  background: rgba(0,0,0,0.08);
+  color: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 10px;
+  min-width: 22px;
+  text-align: center;
+}
+
+.activeBadge {
+  background: rgba(255,255,255,0.25);
+}
