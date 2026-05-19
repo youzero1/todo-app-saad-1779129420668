@@ -18,12 +18,19 @@ export default function TodoPage() {
     clearCompleted,
     activeCount,
     completedCount,
+    loading,
+    error,
   } = useTodos();
 
   return (
     <div className={styles.page}>
       <div className={styles.container}>
         <TodoHeader />
+        {error && (
+          <div className={styles.error}>
+            <strong>Error:</strong> {error}
+          </div>
+        )}
         <div className={styles.card}>
           <TodoInput onAdd={addTodo} />
           <TodoFilters
@@ -31,14 +38,18 @@ export default function TodoPage() {
             setFilter={setFilter}
             activeCount={activeCount}
             completedCount={completedCount}
-            totalCount={todos.length + (filter === 'all' ? 0 : 0)}
+            totalCount={todos.length}
           />
-          <TodoList
-            todos={todos}
-            onToggle={toggleTodo}
-            onDelete={deleteTodo}
-            onEdit={editTodo}
-          />
+          {loading ? (
+            <div className={styles.loading}>Loading todos…</div>
+          ) : (
+            <TodoList
+              todos={todos}
+              onToggle={toggleTodo}
+              onDelete={deleteTodo}
+              onEdit={editTodo}
+            />
+          )}
           <TodoFooter
             activeCount={activeCount}
             completedCount={completedCount}
