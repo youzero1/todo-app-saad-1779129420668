@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Todo, FilterType } from '@/types';
+import { Todo, FilterType, Priority } from '@/types';
 import { supabase } from '@/lib/supabase';
 
 export function useTodos() {
@@ -30,6 +30,7 @@ export function useTodos() {
           id: row.id,
           text: row.text,
           completed: row.completed,
+          priority: (row.priority as Priority) ?? 'medium',
           createdAt: new Date(row.created_at).getTime(),
         }))
       );
@@ -41,11 +42,11 @@ export function useTodos() {
     fetchTodos();
   }, [fetchTodos]);
 
-  async function addTodo(text: string): Promise<void> {
+  async function addTodo(text: string, priority: Priority = 'medium'): Promise<void> {
     if (!text.trim() || !supabase) return;
     const { data, error: insertError } = await supabase
       .from('todos')
-      .insert({ text: text.trim(), completed: false })
+      .insert({ text: text.trim(), completed: false, priority })
       .select()
       .single();
 
@@ -57,6 +58,7 @@ export function useTodos() {
           id: data.id,
           text: data.text,
           completed: data.completed,
+          priority: (data.priority as Priority) ?? 'medium',
           createdAt: new Date(data.created_at).getTime(),
         },
         ...prev,
