@@ -1,0 +1,27 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.link {
+  padding: 0.45rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.link:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+
+.link.active {
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}

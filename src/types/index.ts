@@ -9,3 +9,12 @@ export type Todo = {
   priority: Priority;
   createdAt: number;
 };
+
+export type ItemStatus = 'active' | 'inactive' | 'pending';
+
+export type Item = {
+  id: string;
+  name: string;
+  status: ItemStatus;
+  created_at: string;
+};

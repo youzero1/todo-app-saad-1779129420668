@@ -4,6 +4,7 @@ import TodoInput from '@/components/TodoInput';
 import TodoFilters from '@/components/TodoFilters';
 import TodoList from '@/components/TodoList';
 import TodoFooter from '@/components/TodoFooter';
+import Nav from '@/components/Nav';
 import styles from './TodoPage.module.css';
 
 export default function TodoPage() {
@@ -25,6 +26,7 @@ export default function TodoPage() {
   return (
     <div className={styles.page}>
       <div className={styles.container}>
+        <Nav />
         <TodoHeader />
         {error && (
           <div className={styles.error}>
